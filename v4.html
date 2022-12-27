@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OneTab</title>
+
+<style>
+ *{
+    background-color: rgb(88, 191, 255);
+    font-family: Verdana;
+ }
+
+.content-table{
+    border-collapse: collapse;
+    border: 10px;
+    border-color: black;
+    display: inline-flexbox;
+    max-width: fit-content;
+    max-height: fit-content;
+    max-block-size: 200px 200px;
+    width: 100px;
+    margin: 20px 0;
+    font-size: 0.9em
+    
+}
+
+.content-table thead tr {
+background-color: aqua;
+text-align: center;
+font-weight: bold;
+
+}
+
+.content-table th, .content-table td{
+    padding: 5px 5px;
+}
+
+.textarea{
+    position: relative;
+    top: 150px;
+    right:500px;
+}
+</style>
+
+</head>
+
+                        <!--Header and about-->
+<body>
+        <h1 style="color:rgb(0,0,0); text-align:center;">OneTab</h1>
+       
+        <p1 style="color:rgb(10, 10, 11); font-weight: bold; padding: 10px;">Onetab is a productivity webpage designed in order to maximize productivity while minimizing tab clutter.
+       </p1>
+                        <!--Notepad-->
+       <textarea name="textarea"
+       rows="10" cols="50">Notes, Dates, and To-Do</textarea>
+
+                        <!--Music Table-->
+
+<table class="content-table">
+        
+            <tr style="font-weight: bold;">
+                <td>Lofi</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td> <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/lTRiuFIWV54?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>Fire</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/3DD4pgL5bS4?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe> </td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>Rain</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/y4h_4NIOxuY?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>Classical</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/_bo09hNVS-g?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+            </tr>
+        
+    </table>
+    
+     <!---Calc later-->
+    <style>
+            #calc{
+             border-collapse: collapse;
+             display: inline-flexbox;
+             align-content: right;
+             max-width: fit-content;
+             max-block-size: 200px;
+             max-height: fit-content;
+             position: relative;
+             max-width: fit-content;
+             float: right;
+             bottom: 400px;
+            
+            }
+        
+    </style>
+    <div id="calc">
+        <form name="calculator" >
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger;" size="20px" value="1" onClick="document.calculator.ans.value+='1'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="2" onClick="document.calculator.ans.value+='2'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="3" onClick="document.calculator.ans.value+='3'"><br>
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="4" onClick="document.calculator.ans.value+='4'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="5" onClick="document.calculator.ans.value+='5'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="6" onClick="document.calculator.ans.value+='6'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="7" onClick="document.calculator.ans.value+='7'"><br>
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="8" onClick="document.calculator.ans.value+='8'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="9" onClick="document.calculator.ans.value+='9'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="-" onClick="document.calculator.ans.value+='-'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="+" onClick="document.calculator.ans.value+='+'"><br>
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="*" onClick="document.calculator.ans.value+='*'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="/" onClick="document.calculator.ans.value+='/'">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="0" onClick="document.calculator.ans.value+='0'">
+        
+        <input type="reset" style="height: 50px; width: 60px; color: blue;font-weight: bolder;font-size: small" value="Reset">
+        <input type="button" style="height: 50px; width: 50px; color: blue;font-weight: bolder;font-size: larger" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+        <br>Solution <input style="height: 25px; width: 170px; color: blue;font-weight: bolder;font-size: larger" type="textfield" name="ans" value="">
+        </form>
+    </div>
+
+
+
+</body>
+</html>

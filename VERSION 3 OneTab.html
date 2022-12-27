@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>OneTab</title>
+
+<style>
+ *{
+    background-color: rgb(88, 191, 255);
+    font-family: Verdana;
+ }
+
+.content-table{
+    border-collapse: collapse;
+    border: 10px;
+    border-color: black;
+    display: inline-flexbox;
+    width: 100px;
+    margin: 20px 0;
+    font-size: 0.9em
+}
+
+.content-table thead tr {
+background-color: aqua;
+text-align: center;
+font-weight: bold;
+
+}
+
+.content-table th, .content-table td{
+    padding: 5px 5px;
+}
+
+.textarea{
+    position: relative;
+    top: 150px;
+    right:500px;
+}
+</style>
+
+</head>
+
+<!--OneTab and about-->
+<body>
+        <h1 style="color:rgb(0,0,0); text-align:center;">OneTab</h1>
+       
+        <p1 style="color:rgb(10, 10, 11); font-weight: bold; padding: 10px;">Onetab is a productivity webpage designed in order to maximize productivity while minimizing tab clutter.
+       </p1>
+
+       <textarea name="textarea"
+       rows="10" cols="50">Notes, Dates, and To-Do</textarea>
+
+       <!--Table-->
+<table class="content-table">
+        
+            <tr style="font-weight: bold;">
+                <td>Lofi</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td> <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/lTRiuFIWV54?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>Fire</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/3DD4pgL5bS4?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe> </td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>Rain</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/y4h_4NIOxuY?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td>Classical</td>
+            </tr>
+            <tr style="font-weight: bold;">
+                <td><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/_bo09hNVS-g?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+            </tr>
+        
+    </table>
+    
+    <!---Calc-->
+ 
+<div id="calc">
+    <script src=
+   "https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+           integrity=
+           referrerpolicy="no-referrer"></script>
+       <!--  style aspect -->
+       <style>
+           table {
+               border: 10px solid black;
+               margin-left: auto;
+               display: inline-flexbox;
+               width: 400px;
+               margin-block:-400px;
+               
+           }
+    
+           input[type="button"] {
+               width: 100%;
+               padding: 15px 10px;
+               background-color: blue;
+               color: rgb(0, 0, 0);
+               font-size: 15px;
+               font-weight: bolder;
+               border: none;
+               border-radius: 50px;
+           }
+    
+           input[type="text"] {
+               padding: 1px 1px;
+               font-size: 24px;
+               font-weight: bold;
+               border: none;
+               border-radius: 50px;
+               border: 8px solid black;
+           }
+       </style>
+   </head>
+   <!-- table devolpment -->
+    
+   <body>
+       <table id="calcu">
+           <tr>
+               <td colspan="3"><input type="text" id="result"></td>
+               <!-- clr() is a func that clears the numbers -->
+               <td><input type="button" value="Clear" onclick="clr()" /> </td>
+           </tr>
+           <tr>
+               <!-- create the buttons and the number signif -->
+               <!-- dis("1") will make func dis(play) # -->
+               <td><input type="button" value="1" onclick="dis('1')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="2" onclick="dis('2')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="3" onclick="dis('3')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="/" onclick="dis('/')"
+                           onkeydown="myFunction(event)"> </td>
+           </tr>
+           <tr>
+               <td><input type="button" value="4" onclick="dis('4')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="5" onclick="dis('5')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="6" onclick="dis('6')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="*" onclick="dis('*')"
+                           onkeydown="myFunction(event)"> </td>
+           </tr>
+           <tr>
+               <td><input type="button" value="7" onclick="dis('7')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="8" onclick="dis('8')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="9" onclick="dis('9')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="-" onclick="dis('-')"
+                           onkeydown="myFunction(event)"> </td>
+           </tr>
+           <tr>
+               <td><input type="button" value="0" onclick="dis('0')"
+                           onkeydown="myFunction(event)"> </td>
+               <td><input type="button" value="." onclick="dis('.')"
+                           onkeydown="myFunction(event)"> </td>
+               <!-- solve function makes it find the solution -->
+               <td><input type="button" value="=" onclick="solve()"> </td>
+    
+               <td><input type="button" value="+" onclick="dis('+')"
+                           onkeydown="myFunction(event)"> </td>
+           </tr>
+       </table>
+    
+       <script>
+           // Func that dis(play) valu
+           function dis(val) {
+               document.getElementById("result").value += val
+           }
+    
+           function myFunction(event) {
+               if (event.key == '0' || event.key == '1'
+                   || event.key == '2' || event.key == '3'
+                   || event.key == '4' || event.key == '5'
+                   || event.key == '6' || event.key == '7'
+                   || event.key == '8' || event.key == '9'
+                   || event.key == '+' || event.key == '-'
+                   || event.key == '*' || event.key == '/')
+                   document.getElementById("result").value += event.key;
+           }
+    
+           var cal = document.getElementById("calcu");
+           cal.onkeyup = function (event) {
+               if (event.keyCode === 13) {
+                   console.log("Enter");
+                   let x = document.getElementById("result").value
+                   console.log(x);
+                   solve();
+               }
+           }
+    
+           // Func solve numbers to find solution
+           function solve() {
+               let x = document.getElementById("result").value
+               let y = math.evaluate(x)
+               document.getElementById("result").value = y
+           }
+    
+           // Func that clears the answer board
+           function clr() {
+               document.getElementById("result").value = ""
+           }
+       </script>
+
+    
+    
+     
+     </html>
+     
+
+</body>
+</html>

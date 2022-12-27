@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <style>
+      body {
+            background-color: rgb(154, 196, 237);
+            color: rgb(0, 116, 217);
+      font-family: Verdana
+      }
+      table {
+  border-collapse: collapse;
+  width: 8%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+    
+  
+    <!---Title and description-->
+    
+    
+    <title>OneTab</title>
+    <div class="header">
+  <h1 style="color:rgb(0,0,0); text-align:center;">OneTab</h1>
+  </div>
+        <p1 style="color:rgb(17, 99, 129);">Onetab is a productivity webpage designed in order to maximize productivity while minimizing clutter.
+ </p1>
+ 
+ <!---Calculator-->
+ 
+<div id="calc">
+ <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+        integrity=
+"sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+        integrity=
+"sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <!-- for styling -->
+    <style>
+        table {
+            border: 5px solid blue;
+            margin-left: auto;
+        }
+ 
+        input[type="button"] {
+            width: 100%;
+            padding: 15px 10px;
+            background-color: rgb(96,194,209);
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+        }
+ 
+        input[type="text"] {
+            padding: 1px 1px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<!-- create table -->
+ 
+<body>
+    <table id="calcu">
+        <tr>
+            <td colspan="3"><input type="text" id="result"></td>
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+        </tr>
+        <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="2" onclick="dis('2')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="3" onclick="dis('3')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="/" onclick="dis('/')"
+                        onkeydown="myFunction(event)"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="5" onclick="dis('5')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="6" onclick="dis('6')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="*" onclick="dis('*')"
+                        onkeydown="myFunction(event)"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="8" onclick="dis('8')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="9" onclick="dis('9')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="-" onclick="dis('-')"
+                        onkeydown="myFunction(event)"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="dis('0')"
+                        onkeydown="myFunction(event)"> </td>
+            <td><input type="button" value="." onclick="dis('.')"
+                        onkeydown="myFunction(event)"> </td>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" onclick="solve()"> </td>
+ 
+            <td><input type="button" value="+" onclick="dis('+')"
+                        onkeydown="myFunction(event)"> </td>
+        </tr>
+    </table>
+ 
+    <script>
+        // Function that display value
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+ 
+        function myFunction(event) {
+            if (event.key == '0' || event.key == '1'
+                || event.key == '2' || event.key == '3'
+                || event.key == '4' || event.key == '5'
+                || event.key == '6' || event.key == '7'
+                || event.key == '8' || event.key == '9'
+                || event.key == '+' || event.key == '-'
+                || event.key == '*' || event.key == '/')
+                document.getElementById("result").value += event.key;
+        }
+ 
+        var cal = document.getElementById("calcu");
+        cal.onkeyup = function (event) {
+            if (event.keyCode === 13) {
+                console.log("Enter");
+                let x = document.getElementById("result").value
+                console.log(x);
+                solve();
+            }
+        }
+ 
+        // Function that evaluates the digit and return result
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = math.evaluate(x)
+            document.getElementById("result").value = y
+        }
+ 
+        // Function that clear the display
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+    </script>
+    
+    <!---Music Table-->
+    
+    
+<table>
+   <style>
+        table {
+            border: 5px solid blue;
+            margin-left: auto;
+        }
+    </style>
+  <tr>
+    <th>Lofi</th>
+  </tr>
+  <tr>
+    <td> <div class="lofi1">
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/lTRiuFIWV54?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe> </td>
+  </tr>
+  <tr>
+    <td>Fire</td>
+  </tr>
+  <tr>
+    <td><div class="fire">
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/3DD4pgL5bS4?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe> </td>
+
+  </tr>
+  <tr>
+    <td>Rain</td>
+  </tr>
+  <tr>
+    <td> <div class="rain">
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/y4h_4NIOxuY?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe> </td>
+  </tr>
+  <tr>
+    <td>Clasiscal</td>
+  </tr>
+  <tr>
+    <td> <div class="classical">
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="58" height="58" type="text/html" src="https://www.youtube.com/embed/_bo09hNVS-g?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=small&origin=http://youtubeembedcode.com"></iframe></td>
+  </tr>
+</table>
+
